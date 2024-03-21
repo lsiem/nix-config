@@ -9,6 +9,5 @@
 
   services.gnome.extensions = {
     enable = true;
-  }
-
+  };
 }
