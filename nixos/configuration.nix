@@ -1,27 +1,37 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
+# This is my system's configuration file.
+# This is used to configure my system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
+  outputs,
   lib,
   config,
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
+  # Import other NixOS modules here
   imports = [
-    # If you want to use modules from other flakes (such as nixos-hardware):
+    # Import home-manager's NixOS module
+    inputs.home-manager.nixosModules.home-manager
+  
+    # Use modules from other flakes (such as nixos-hardware):
     inputs.hardware.nixosModules.common-cpu-intel-kaby-lake
-    inputs.hardware.nixosModules.common-gpu-nvidia
+    # inputs.hardware.nixosModules.common-gpu-nvidia
     inputs.hardware.nixosModules.common-pc-ssd
-    inputs.hardware.nixosModules.hidpi
     
-    # You can also split up your configuration and import pieces of it here:
+    # TODO: split up configuration and import pieces of it here:
     # ./users.nix
 
-    # Import your generated (nixos-generate-config) hardware configuration
+    # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-    <agenix/modules/age.nix>
   ];
+
+  home-manager = {
+      extraSpecialArgs = { inherit inputs outputs; };
+      users = {
+        # Import my home-manager configuration
+        lasse = import ../home-manager/home.nix;
+      };
+  };
 
   nixpkgs = {
     # TODO: Add overlays here
@@ -62,7 +72,6 @@
 
   boot.initrd.luks.devices."luks-5ab49469-444a-47cf-a173-2e9f78321f22".device = "/dev/disk/by-uuid/5ab49469-444a-47cf-a173-2e9f78321f22";
   networking.hostName = "herobox-nixos"; # Defines hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -113,7 +122,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    media-session.enable = true;
   };
 
   # Define my user account
@@ -128,10 +136,10 @@
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
+    (inputs.home-manager.packages.${pkgs.system}.default)
     wget
     micro
     git
-    (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
