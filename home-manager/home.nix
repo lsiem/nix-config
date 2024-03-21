@@ -35,7 +35,12 @@
 
   # TODO: Add stuff for my user
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  home.packages = with pkgs; [
+    brave
+    alacritty
+    vscode
+    bitwarden
+  ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

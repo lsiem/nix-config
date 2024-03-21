@@ -12,6 +12,7 @@
     # Additional flakes
     hardware.url = "github:nixos/nixos-hardware";
     nix-colors.url = "github:misterio77/nix-colors";
+    nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
   };
 
   outputs = {

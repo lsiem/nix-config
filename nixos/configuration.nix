@@ -20,6 +20,7 @@
     
     # TODO: split up configuration and import pieces of it here:
     # ./users.nix
+    ../gnome/gnome-settings.nix
 
     # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -136,7 +137,8 @@
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
-    (inputs.home-manager.packages.${pkgs.system}.default)
+    inputs.home-manager.packages.${system}.default
+    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
     wget
     micro
     git
