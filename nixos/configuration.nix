@@ -30,6 +30,10 @@
     ./modules/system/boot/boot.nix
     ./modules/system/hardware/opengl.nix
 
+
+    ./modules/programs/starship.nix
+    ../home-manager/zsh.nix
+    
     # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];

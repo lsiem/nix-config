@@ -12,8 +12,6 @@
 
     # TODO: Split up my configuration and import pieces of it here:
     # ./nvim.nix
-    "./zsh.nix"
-    "../nixos/modules/programs/starship.nix"
   ];
 
   nixpkgs = {
