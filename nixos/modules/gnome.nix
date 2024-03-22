@@ -31,4 +31,7 @@
     gnomeExtensions.vitals
     gnomeExtensions.forge
   ];
+
+  gnome.gnome-keyring.enable = true;
+  gvfs.enable = true;
 }

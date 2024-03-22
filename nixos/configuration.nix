@@ -20,7 +20,9 @@
     # TODO: split up configuration and import pieces of it here:
     # ./users.nix
     ./modules/gnome.nix
-    ./modules/pipewire.nix
+    ./services/pipewire.nix
+    ./services/backlight.nix
+    ./services/power.nix
     ./modules/system/hardware/bluetooth.nix
     ./modules/system/hardware/nvidia.nix
     ./modules/system/hardware/intel.nix
