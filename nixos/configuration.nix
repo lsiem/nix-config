@@ -26,7 +26,7 @@
     ./modules/system/hardware/intel.nix
     ./modules/system/security/security.nix
     ./modules/system/boot/boot.nix
-    ./modules/system/hardware/opengl.nix
+    ./modules/system/opengl.nix
 
     # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
