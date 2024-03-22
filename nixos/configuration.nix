@@ -69,12 +69,6 @@
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
-    # Use substitution for all packages
-    builders.useSubstitutes = true;
-    # Keep derivations for debugging
-    keep-derivations = true;
-    # Keep build logs for debugging
-    keep-outputs = true;
     # Trust only root and wheel group
     trusted-users = ["root" "@wheel"];
   };
