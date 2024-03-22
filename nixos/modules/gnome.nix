@@ -20,8 +20,8 @@
   environment.systemPackages = with pkgs; [
     playerctl # gsconnect play/pause control
     pamixer # gsconnect volume control
-    gnomeTweaks
-    dconf-editor 
+    gnome.gnome-tweaks
+    gnome.dconf-editor 
     gnomeExtensions.dashToDock
     gnomeExtensions.gsconnect
     gnomeExtensions.userThemes
