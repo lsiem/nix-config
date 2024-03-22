@@ -133,6 +133,13 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.accounts-daemon-enable = true;
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.tumbler.enable = true;
+  services.upower.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
     layout = "de";
