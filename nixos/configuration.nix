@@ -88,6 +88,17 @@
   # Enable nextdns
   services.nextdns.enable = true;
 
+  services.resolved = {
+    enable = true;
+    extraConfig = "
+      DNS=45.90.28.0#6a3414.dns.nextdns.io
+      DNS=2a07:a8c0::#6a3414.dns.nextdns.io
+      DNS=45.90.30.0#6a3414.dns.nextdns.io
+      DNS=2a07:a8c1::#6a3414.dns.nextdns.io
+      DNSOverTLS=yes
+    ";
+  };
+
   # Set my time zone.
   time.timeZone = "Europe/Berlin";
 
