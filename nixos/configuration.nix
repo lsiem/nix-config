@@ -85,6 +85,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable nextdns
+  services.nextdns.enable = true;
+
   # Set my time zone.
   time.timeZone = "Europe/Berlin";
 
@@ -126,7 +129,18 @@
   users.users.lasse = {
     isNormalUser = true;
     description = "Lasse";
-    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+    extraGroups = [ 
+      "networkmanager" 
+      "wheel" 
+      "adbusers"
+      "input"
+      "networkmanager"
+      "plugdev"
+      "transmission"
+      "video"
+      "wheel"
+    ];
     packages = with pkgs; [
       firefox
     ];
@@ -139,6 +153,7 @@
     wget
     micro
     git
+    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
