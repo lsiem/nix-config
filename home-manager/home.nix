@@ -40,6 +40,7 @@
     alacritty
     vscode
     bitwarden
+    monaspace
   ];
 
   # Enable home-manager and git
