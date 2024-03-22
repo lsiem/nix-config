@@ -12,6 +12,8 @@
 
     # TODO: Split up my configuration and import pieces of it here:
     # ./nvim.nix
+    "./zsh.nix"
+    "../nixos/modules/programs/starship.nix"
   ];
 
   nixpkgs = {
@@ -41,6 +43,7 @@
     vscode
     bitwarden
     monaspace
+    starship
   ];
 
   # Enable home-manager and git
