@@ -28,7 +28,7 @@ in {
       nvidia = {
         powerManagement = {
           enable = true;
-          finegrained = true;
+          finegrained = false;
         };
 
         dynamicBoost.enable = true;
