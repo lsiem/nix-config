@@ -146,8 +146,7 @@
       packages = with pkgs; [dconf gcr udisks2];
     };
 
-    udev.packages = with pkgs; [gnome.gnome-settings-daemon android-udev-rules];
-  };
+  services.udev.packages = with pkgs; [gnome.gnome-settings-daemon android-udev-rules];
 
   # Configure keymap in X11
   services.xserver = {
