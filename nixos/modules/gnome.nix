@@ -22,10 +22,12 @@
     pamixer # gsconnect volume control
     gnome.gnome-tweaks
     gnome.dconf-editor 
-    gnomeExtensions.dashToDock
     gnomeExtensions.gsconnect
-    gnomeExtensions.userThemes
-    gnomeExtensions.arcMenu
+    gnomeExtensions.pano
+    gnomeExtensions.cpufreq
+    gnomeExtensions.dark-variant
+    gnomeExtensions.user-themes
+    gnomeExtensions.arcmenu
     gnomeExtensions.vitals
     gnomeExtensions.forge
   ];
