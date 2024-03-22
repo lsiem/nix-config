@@ -120,8 +120,8 @@
   };
 
   # Set latitude and longitude
-  location.latitude = 53;
-  location.longitude = 8;
+  location.latitude = 53.04;
+  location.longitude = 8.28;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
