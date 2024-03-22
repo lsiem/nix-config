@@ -27,11 +27,11 @@ in {
     hardware = {
       nvidia = {
         powerManagement = {
-          enable = true;
+          enable = false;
           finegrained = false;
         };
 
-        dynamicBoost.enable = true;
+        dynamicBoost.enable = false;
         modesetting.enable = true;
 
         prime.offload = {
