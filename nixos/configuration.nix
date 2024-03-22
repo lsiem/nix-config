@@ -72,7 +72,7 @@
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
     # Trust only root and wheel group
-    trusted-users = ["root" "@wheel"];
+    trusted-users = ["root" "lasse"];
   };
 
   # Bootloader.
