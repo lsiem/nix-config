@@ -15,12 +15,16 @@
   
     # Use modules from other flakes (such as nixos-hardware):
     inputs.hardware.nixosModules.common-cpu-intel-kaby-lake
-    # inputs.hardware.nixosModules.common-gpu-nvidia
     inputs.hardware.nixosModules.common-pc-ssd
     
     # TODO: split up configuration and import pieces of it here:
     # ./users.nix
-    ../gnome/gnome-settings.nix
+    ./modules/gnome.nix
+    ./modules/pipewire.nix
+    ./modules/system/hardware/bluetooth.nix
+    ./modules/system/hardware/nvidia.nix
+    ./modules/system/hardware/intel.nix
+    ./modules/system/security/security.nix
 
     # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -65,6 +69,14 @@
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
+    # Use substitution for all packages
+    builders.useSubstitutes = true;
+    # Keep derivations for debugging
+    keep-derivations = true;
+    # Keep build logs for debugging
+    keep-outputs = true;
+    # Trust only root and wheel group
+    trusted-users = ["root" "@wheel"];
   };
 
   # Bootloader.
@@ -113,17 +125,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   # Define my user account
   users.users.lasse = {
