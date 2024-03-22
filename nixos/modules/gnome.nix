@@ -32,6 +32,10 @@
     gnomeExtensions.forge
   ];
 
-  gnome.gnome-keyring.enable = true;
-  gvfs.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-remote-desktop.enable = true;
+  services.gnome.gnome-online-accounts.enable = true;
+  services.gnome.gnome-online-miners.enable = true;
+  services.gnome.gnome-browser-connector.enable = true;
+  services.gnome.gnome-user-share.enable = true;
 }
