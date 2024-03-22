@@ -119,6 +119,10 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+  # Set latitude and longitude
+  location.latitude = 53;
+  location.longitude = 8;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
