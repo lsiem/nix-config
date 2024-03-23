@@ -222,6 +222,9 @@
   # Enable zsh
   programs.zsh.enable = true;
 
+  # Enable ccache
+  programs.ccache.enable = true;
+
   # List services that I want to enable:
   # TODO: Add services
 
