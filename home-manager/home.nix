@@ -40,35 +40,6 @@
     alacritty
     vscode
     bitwarden
-    phoronix-test-suite
-    perl
-    libxml2
-    bc
-    bison
-    flex
-    openssl
-    gmp
-    cmake
-    yasm
-    nasm
-    curl
-    libuuid
-    bzip2
-    zlib
-    scons
-    ncurses
-    rustc
-    meson
-    glew
-    xorg.xorgserver
-    protobuf
-    boost
-    tcl
-    zlib
-    libpng12
-    p7zip
-    libtool
-    libaio
     monaspace
     starship
     (python3.withPackages (ps:
