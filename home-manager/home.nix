@@ -40,7 +40,7 @@
     alacritty
     vscode
     bitwarden
-    geekbench
+    phoronix-test-suite
     monaspace
     starship
     (python3.withPackages (ps:
