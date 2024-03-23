@@ -25,7 +25,7 @@ in {
     nixpkgs.config.allowUnfree = true;
 
     # Enable support for Nvidia in Wayland sessions
-    environment.variables.__EGL_VENDOR_LIBRARY_DIRS = "${hardware.nvidia.package}/share/glvnd/egl_vendor.d";
+    environment.variables.__EGL_VENDOR_LIBRARY_DIRS = "${config.hardware.nvidia.package}/share/glvnd/egl_vendor.d";
     services.xserver.displayManager.gdm.wayland = true;
     services.xserver.displayManager.gdm.enable = true;
   };
