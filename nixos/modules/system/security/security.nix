@@ -47,4 +47,7 @@
     # userland niceness
     rtkit.enable = true;
   };
+
+  services.fail2ban.enable = true;
+  networking.firewall.enable = true;
 }

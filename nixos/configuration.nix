@@ -45,6 +45,15 @@
       };
   };
 
+  nix = {
+    binaryCaches = [
+      "https://cache.nixos.org/"
+    ];
+    binaryCachePublicKeys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+    ];
+  };
+
   nixpkgs = {
     # TODO: Add overlays here
     overlays = [
@@ -80,11 +89,20 @@
     trusted-users = ["root" "lasse"];
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-5ab49469-444a-47cf-a173-2e9f78321f22".device = "/dev/disk/by-uuid/5ab49469-444a-47cf-a173-2e9f78321f22";
+  boot.initrd.availableKernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" "i915" ];
+  boot.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" "i915" ];
+  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
   networking.hostName = "herobox-nixos"; # Defines hostname.
 
   # Enable networking
@@ -144,7 +162,7 @@
       enable = true;
       implementation = "broker";
       packages = with pkgs; [dconf gcr udisks2];
-    };
+  };
 
   services.udev.packages = with pkgs; [gnome.gnome-settings-daemon android-udev-rules];
 
@@ -175,6 +193,7 @@
       "transmission"
       "video"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       firefox

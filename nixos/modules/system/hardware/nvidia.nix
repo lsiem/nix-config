@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf versionOlder;
@@ -12,41 +13,20 @@
     then config.boot.kernelPackages.nvidiaPackages.stable
     else config.boot.kernelPackages.nvidiaPackages.beta;
 
-  pCfg = config.hardware.nvidia.prime;
-
-  extraEnv = {
-    NVD_BACKEND = "direct";
-    WLR_NO_HARDWARE_CURSORS = "1";
-  };
 in {
   config = {
     boot.blacklistedKernelModules = ["nouveau"];
-    environment.variables = extraEnv;
-    environment.sessionVariables = extraEnv;
-
-    hardware = {
-      nvidia = {
-        powerManagement = {
-          enable = false;
-          finegrained = false;
-        };
-
-        dynamicBoost.enable = false;
-        modesetting.enable = true;
-
-        prime.offload = {
-          enable = false; 
-          enableOffloadCmd = false;
-        };
-
-        nvidiaSettings = false;
-        nvidiaPersistenced = true;
-
-        package = nvidiaPackage;
-        open = false;
-      };
+    hardware.nvidia = {
+      powerManagement.enable = true;
+      modesetting.enable = true;
+      package = nvidiaPackage;
     };
-
     services.xserver.videoDrivers = ["nvidia"];
+    nixpkgs.config.allowUnfree = true;
+
+    # Enable support for Nvidia in Wayland sessions
+    environment.variables.__EGL_VENDOR_LIBRARY_DIRS = "${pkgs.nvidia_x11}/share/glvnd/egl_vendor.d";
+    services.xserver.displayManager.gdm.wayland = true;
+    services.xserver.displayManager.gdm.enable = true;
   };
 }
