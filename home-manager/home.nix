@@ -43,6 +43,7 @@
     monaspace
     starship
     wgnord
+    tor-browser
     (python3.withPackages (ps:
       with ps; [
         pip
