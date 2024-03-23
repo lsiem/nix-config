@@ -46,12 +46,14 @@
   };
 
   nix = {
-    binaryCaches = [
-      "https://cache.nixos.org/"
-    ];
-    binaryCachePublicKeys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
+    settings = {
+      substituters = [
+        "https://cache.nixos.org/"
+      ];
+      trustedPublicKeys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      ];
+    };
   };
 
   nixpkgs = {
