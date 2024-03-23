@@ -40,6 +40,7 @@
     alacritty
     vscode
     bitwarden
+    geekbench
     monaspace
     starship
     (python3.withPackages (ps:
