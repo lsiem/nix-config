@@ -42,6 +42,7 @@
     bitwarden
     monaspace
     starship
+    wgnord
     (python3.withPackages (ps:
       with ps; [
         pip
