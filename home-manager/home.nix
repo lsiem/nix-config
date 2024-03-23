@@ -63,6 +63,12 @@
     xorg.xorgserver
     protobuf
     boost
+    tcl
+    zlib
+    libpng12
+    p7zip
+    libtool
+    libaio
     monaspace
     starship
     (python3.withPackages (ps:
