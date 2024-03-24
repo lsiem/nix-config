@@ -45,6 +45,7 @@
     wgnord
     tor-browser-bundle-bin
     samsung-unified-linux-driver
+    dotnet-runtime_7
     (python3.withPackages (ps:
       with ps; [
         pip
