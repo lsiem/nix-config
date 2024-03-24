@@ -19,7 +19,8 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager
+    home-manager,
+    nix-alien
   } @ inputs: let
     inherit (self) outputs;
   in {
