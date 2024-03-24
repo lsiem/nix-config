@@ -21,6 +21,8 @@
     nixpkgs,
     home-manager,
     hardware,
+    nix-colors,
+    nixos-conf-editor,
     nix-alien
   } @ inputs: let
     inherit (self) outputs;
