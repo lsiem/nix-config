@@ -53,7 +53,7 @@
     ruff
     ruff-lsp
     lz4
-    zulu-ca-jdk
+    zulu
   ];
 
   # Enable home-manager and git
