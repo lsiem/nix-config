@@ -53,7 +53,7 @@
     ruff
     ruff-lsp
     lz4
-    oracle-jre
+    oraclejre
   ];
 
   # Enable home-manager and git
