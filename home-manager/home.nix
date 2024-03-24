@@ -44,6 +44,7 @@
     starship
     wgnord
     tor-browser-bundle-bin
+    samsung-unified-linux-driver
     (python3.withPackages (ps:
       with ps; [
         pip
