@@ -9,7 +9,6 @@
   # Import other home-manager modules
   imports = [
     inputs.nix-colors.homeManagerModule
-	inputs.nix-alien.homeManagerModule
     # TODO: Split up my configuration and import pieces of it here:
     # ./nvim.nix
   ];

@@ -31,9 +31,9 @@
         };
         # Pass nix-alien and other inputs to Home Manager
         specialArgs = { inherit inputs; };
-        # Ensure you're using the correct Nixpkgs and Home Manager
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
+        nix-alien = inputs.nix-alien;
       };
     };
   };
