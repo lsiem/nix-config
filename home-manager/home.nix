@@ -54,6 +54,7 @@
     ruff-lsp
     lz4
     zulu
+    heimdall-gui
   ];
 
   # Enable home-manager and git
