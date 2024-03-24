@@ -55,6 +55,7 @@
     lz4
     zulu
     heimdall-gui
+    libxslt
   ];
 
   # Enable home-manager and git
