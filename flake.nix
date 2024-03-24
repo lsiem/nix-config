@@ -13,13 +13,17 @@
     hardware.url = "github:nixos/nixos-hardware";
     nix-colors.url = "github:misterio77/nix-colors";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    ...
+    nix-alien,
+    nix-colors,
+    nixos-conf-editor,
+    hardware,
   } @ inputs: let
     inherit (self) outputs;
   in {

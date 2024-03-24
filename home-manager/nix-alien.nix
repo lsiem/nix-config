@@ -1,8 +1,4 @@
 {
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
-  inputs.home-manager.url = "github:nix-community/home-manager";
-  inputs.nix-alien.url = "github:thiagokokada/nix-alien";
-
   outputs = { self, nixpkgs, home-manager, nix-alien }:
     let
       system = "x86_64-linux"; # or aarch64-linux
