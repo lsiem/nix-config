@@ -206,6 +206,7 @@
   environment.systemPackages = with pkgs; [
     inputs.home-manager.packages.${system}.default
     inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+    steam-run
     wget
     micro
     git
