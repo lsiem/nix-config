@@ -52,6 +52,7 @@
     pipenv
     ruff
     ruff-lsp
+    lz4
   ];
 
   # Enable home-manager and git
