@@ -19,11 +19,7 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
-    nix-alien,
-    nix-colors,
-    nixos-conf-editor,
-    hardware,
+    home-manager
   } @ inputs: let
     inherit (self) outputs;
   in {
