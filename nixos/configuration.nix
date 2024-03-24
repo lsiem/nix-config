@@ -164,7 +164,10 @@
   };
 
   services.udev.packages = with pkgs; [gnome.gnome-settings-daemon android-udev-rules];
-
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="adbusers"
+  '';
+  
   # Configure keymap in X11
   services.xserver = {
     layout = "de";
