@@ -200,6 +200,8 @@
     ];
     packages = with pkgs; [
       firefox
+      dotnet-runtime_7
+      samsung-unified-linux-driver
     ];
   };
 
