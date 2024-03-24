@@ -11,7 +11,6 @@ in {
     modules = [
       ({ pkgs, ... }: {
         home.packages = with pkgs; [
-          # Assuming `nix-alien` is a package available in `pkgs`
           nix-alien
         ];
       })
