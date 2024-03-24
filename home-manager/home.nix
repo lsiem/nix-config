@@ -56,7 +56,6 @@
     zulu
     heimdall-gui
     libxslt
-    nix-alien
   ];
 
   # Enable home-manager and git

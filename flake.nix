@@ -12,13 +12,28 @@
   };
 
   outputs = { self, nixpkgs, home-manager, hardware, nix-colors, nixos-conf-editor, nix-alien, ... } @ inputs: {
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#hostname'
     nixosConfigurations = {
       herobox-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        # main nixos configuration file
         modules = [ ./nixos/configuration.nix ];
+      };
+    };
+    homeConfigurations = {
+      lasse = home-manager.lib.homeManagerConfiguration {
+        configuration = { config, pkgs, ... }: {
+          imports = [
+          ];
+          programs.home-manager.enable = true;
+          environment.systemPackages = with pkgs; [
+            libxslt
+            inputs.nix-alien
+          ];
+        };
+        # Pass nix-alien and other inputs to Home Manager
+        specialArgs = { inherit inputs; };
+        # Ensure you're using the correct Nixpkgs and Home Manager
+        nixpkgs = inputs.nixpkgs;
+        home-manager = inputs.home-manager;
       };
     };
   };
