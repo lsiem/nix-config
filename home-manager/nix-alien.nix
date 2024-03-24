@@ -1,6 +1,4 @@
 {
-  description = "nix-alien-on-home-manager";
-
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
   inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.nix-alien.url = "github:thiagokokada/nix-alien";
