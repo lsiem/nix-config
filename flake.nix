@@ -20,6 +20,7 @@
     self,
     nixpkgs,
     home-manager,
+    hardware,
     nix-alien
   } @ inputs: let
     inherit (self) outputs;
