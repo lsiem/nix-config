@@ -199,9 +199,6 @@
       "docker"
     ];
     packages = with pkgs; [
-      firefox
-      dotnet-runtime_7
-      samsung-unified-linux-driver
     ];
   };
 
@@ -214,6 +211,9 @@
     git
     zsh
     ocs-url
+    dotnet-runtime_7
+    samsung-unified-linux-driver
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
