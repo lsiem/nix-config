@@ -224,6 +224,9 @@
   # Enable ccache
   programs.ccache.enable = true;
 
+  # Enable ADB
+  programs.adb.enable = true;
+
   # List services that I want to enable:
   # TODO: Add services
 
