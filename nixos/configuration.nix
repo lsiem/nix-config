@@ -29,10 +29,10 @@
     ./modules/system/security/security.nix
     ./modules/system/boot/boot.nix
     ./modules/system/hardware/opengl.nix
-    ./modules/nix-alien.nix
 
     ./modules/programs/starship.nix
     ../home-manager/zsh.nix
+    ../home-manager/nix-alien.nix
 
     # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
