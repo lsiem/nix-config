@@ -32,7 +32,6 @@
 
     ./modules/programs/starship.nix
     ../home-manager/zsh.nix
-    ../home-manager/nix-alien.nix
 
     # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
