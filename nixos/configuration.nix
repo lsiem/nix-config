@@ -234,6 +234,10 @@
   # Enable ADB
   programs.adb.enable = true;
 
+  # Enable nix-ld for running unpatched binaries
+  programs.nix-ld.enable = true;
+
+
   # List services that I want to enable:
   # TODO: Add services
 
